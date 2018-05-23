@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 class Square extends React.Component {
 render() {
   return (
-  <button className="square">Hello
+  <button className="square">
+  {this.props.value}
   </button>
     )
   } 
