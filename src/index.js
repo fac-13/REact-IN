@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Square from "./components/square"
+import Board from "./components/board";
 
-ReactDOM.render(<Square />,
+ReactDOM.render(<Board />,
     document.getElementById('container')
 )
 
