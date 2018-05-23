@@ -1,7 +1,7 @@
 # re-ACT-in
 React with Ivi &amp; Niko 
 
-### Reaquirements
+### Requirements
 [ ] Let you submit a username  
 [ ] Query the Github API (or any other fun one you like  
 [ ] Populate a UI with the user details  
