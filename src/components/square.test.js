@@ -9,6 +9,12 @@ describe('testing square component', () => {
         const root = document.createElement('div');
         ReactDOM.render(<Square />, root);    
         expect(root.querySelector('button')).toBeTruthy()
-  })
-
+    })
+    test('button changes content on click', () => {
+        const root = document.createElement('div');
+        ReactDOM.render(<Square />, root);    
+        const buttonNode = root.querySelectorAll('button')[0];
+        Simulate.click(buttonNode);
+        expect(buttonNode.textContent).toBe("💩")
+    })
 })
