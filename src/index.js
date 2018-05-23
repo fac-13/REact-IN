@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Square from "./components/square"
 
-ReactDOM.render(
-    <div> hello world from ivi </div>,
+ReactDOM.render(<Square />,
     document.getElementById('container')
 )
 
