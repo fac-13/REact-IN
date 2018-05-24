@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Square from './square';
-import checkWinner from '../utils/checkWinner'
+import checkWinner from '../utils/checkWinner';
+import { fetchData, API_BASE } from "../utils/fetchAvatar";
+
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       squares: Array(25).fill(null),
-      xIsNext: true  
+      xIsNext: true,
+      data: null
    }
   }
-  
+
+
+  componentDidMount() {
+    const username = "nico";
+    const url = `${API_BASE}/${username}.png`;
+    fetchData(url).then(data => this.setState({ data }));
+  }
+
+
   handleClick = (i) => {
     const clonedSquares = JSON.parse(JSON.stringify(this.state.squares))
     if (checkWinner(clonedSquares)){
@@ -32,13 +43,25 @@ class Board extends React.Component {
   }
     
     render() {
-      const winner = checkWinner(this.state.squares)
+
+      if (!this.state.data) {
+        return <h3>...Loading</h3>;
+      }
+  
+      const avatar = this.state.data.url;
+      const image =  <img src={this.state.data.url} />;
+
+      console.log(avatar);
+
+      const winner = checkWinner(this.state.squares);
       let status;
       if (winner) {
         status = "Winner: " + winner;
       } else {
         status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
       }
+
+
       return (
         <div>
         <div className="status-line" >{status}</div>
