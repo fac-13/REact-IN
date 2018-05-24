@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container{
+    height: 90vh;
+    width: 90vh;
+}
+.square{
+    border: none;
+    outline: none;
+    background-color: teal;
+    height: 50px;
+    width: 50px;
+}
+
+.board-row{
+    margin:0;
+    padding: 0;
+}
+

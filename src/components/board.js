@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Square from './square';
+import checkWinner from '../utils/checkWinner'
 
 class Board extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class Board extends React.Component {
   
   handleClick = (i) => {
     const clonedSquares = JSON.parse(JSON.stringify(this.state.squares))
+    if (checkWinner(clonedSquares)){
+      console.log(checkWinner)
+      return;
+    }
     clonedSquares[i] =  this.state.xIsNext ? "X" : "O";
     this.setState({
       squares: clonedSquares,
@@ -27,9 +32,13 @@ class Board extends React.Component {
   }
     
     render() {
-
-      const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-
+      const winner = checkWinner(this.state.squares)
+      let status;
+      if (winner) {
+        status = "Winner: " + winner;
+      } else {
+        status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      }
       return (
         <div>
         <div className="status-line" >{status}</div>
@@ -72,5 +81,6 @@ class Board extends React.Component {
       );
     }
 }
+
 
 export default Board;
