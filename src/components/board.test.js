@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-dom/test-utils'
 import Board from './board'
+import Square from './square'
 import { render, Simulate, prettyDOM } from 'react-testing-library';
 
 describe('testing total number of buttons', () => {
@@ -14,6 +15,13 @@ describe('testing total number of buttons', () => {
   test('value of button renders', () => {
     const root = document.createElement('div');
     ReactDOM.render(<Board />, root);    
-    expect(root.querySelectorAll('button')[0].value).toBe('0');
-})
+    expect(root.querySelectorAll('button')[0].value).toBe("");
+  })
+  test('button changes content on click', () => {
+    const root = document.createElement('div');
+    ReactDOM.render(<Board />, root);    
+    const buttonNode = root.querySelectorAll('button')[0];
+    Simulate.click(buttonNode);
+    expect(buttonNode.textContent).toBe("💩")
+})    
 })
