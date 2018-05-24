@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Square(props){
+function Square(props) {
   return (
     <button
-      className="square" value={props.value} onClick={props.onClick}>
+      className={`square ${props.className}` }  onClick={props.onClick}>
       {props.value}
    </button>
     )

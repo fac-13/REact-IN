@@ -2,18 +2,50 @@ body{
     margin: 0;
     padding: 0;
     height: 100vh;
+    font-family: 'Indie Flower', cursive;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
-    height: 90vh;
-    width: 90vh;
+    max-width: 300px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.game-board{
+    max-width: 250px;
+    display: grid;
+    grid-template-areas: 
+    "t t t t t"
+    ". . . . ."
+    "a b c d e" 
+    "f g h i j"
+    "k l m n o"
+    "p q r s u"
+    "v w x y z";
+}
+
+.status-line{
+    grid-area: t;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
 .square{
     border: none;
     outline: none;
     background-color: teal;
     height: 50px;
     width: 50px;
+    padding: 0;
+    color: #fafafa;
+    font-size: 2rem;
+    font-family: 'Indie Flower', cursive;
 }
 
 .board-row{
@@ -21,3 +53,129 @@ body{
     padding: 0;
 }
 
+.square0{
+ grid-area: a;
+ justify-self:center;
+ align-self: center;
+}
+.square1{
+ grid-area: b;
+ justify-self:center;
+ align-self: center;
+}
+.square2{
+ grid-area: c;
+ justify-self:center;
+ align-self: center;
+}
+.square3{
+ grid-area: d;
+ justify-self:center;
+ align-self: center;
+}
+.square4{
+ grid-area: e;
+ justify-self:center;
+ align-self: center;
+}
+.square5{
+ grid-area: f;
+ justify-self:center;
+ align-self: center;
+}
+.square6{
+ grid-area: g;
+ justify-self:center;
+ align-self: center;
+}
+.square7{
+ grid-area: h;
+ justify-self:center;
+ align-self: center;
+}
+.square8{
+ grid-area: i;
+ justify-self:center;
+ align-self: center;
+}
+.square9{
+ grid-area: j;
+ justify-self:center;
+ align-self: center;
+}
+.square10{
+ grid-area: k;
+ justify-self:center;
+ align-self: center;
+}
+.square11{
+ grid-area: l;
+ justify-self:center;
+ align-self: center;
+}
+
+.square12{
+grid-area: m;
+justify-self:center;
+align-self: center;
+}
+.square13{
+grid-area: n;
+justify-self:center;
+align-self: center;
+}
+.square14{
+grid-area: o;
+justify-self:center;
+align-self: center;
+}
+.square15{
+grid-area: p;
+justify-self:center;
+align-self: center;
+}
+.square16{
+grid-area: q;
+justify-self:center;
+align-self: center;
+}
+.square17{
+grid-area: r;
+justify-self:center;
+align-self: center;
+}
+.square18{
+grid-area: s;
+justify-self:center;
+align-self: center;
+}
+.square19{
+grid-area: u;
+justify-self:center;
+align-self: center;
+}
+.square20{
+grid-area: v;
+justify-self:center;
+align-self: center;
+}
+.square21{
+grid-area: w;
+justify-self:center;
+align-self: center;
+}
+.square22{
+ grid-area: x;
+ justify-self:center;
+ align-self: center;
+}
+.square23{
+grid-area: y;
+justify-self:center;
+align-self: center;
+}
+.square24{
+ grid-area: z;
+ justify-self:center;
+ align-self: center;
+}
