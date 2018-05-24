@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Board from "./components/board";
+import Game from "./components/game";
 
-ReactDOM.render(<Board />,
+ReactDOM.render(<Game />,
     document.getElementById('container')
 )
 
