@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Board from './board';
 
 class Game extends React.Component {
+
   render() {
     return (
       <div className="game">
@@ -10,8 +11,6 @@ class Game extends React.Component {
           <Board />
         </div>
         <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
         </div>
       </div>
     );

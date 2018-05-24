@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Square from './square';
+
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squares: Array(25).fill(null),  
+      squares: Array(25).fill(null),
+      xIsNext: true  
    }
   }
   
   handleClick = (i) => {
     const clonedSquares = JSON.parse(JSON.stringify(this.state.squares))
-    clonedSquares[i] = "💩";
-    this.setState({squares: clonedSquares})
+    clonedSquares[i] =  this.state.xIsNext ? "X" : "O";
+    this.setState({
+      squares: clonedSquares,
+      xIsNext: !this.state.xIsNext,
+    })
   }
 
   renderSquare(i) {
@@ -22,8 +27,12 @@ class Board extends React.Component {
   }
     
     render() {
+
+      const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+
       return (
         <div>
+        <div className="status-line" >{status}</div>
           <div className="board-row">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
