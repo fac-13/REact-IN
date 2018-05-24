@@ -34,6 +34,7 @@ body{
     grid-area: t;
     margin-bottom: 3rem;
     font-size: 2rem;
+    color: teal;
 }
 
 .square{
