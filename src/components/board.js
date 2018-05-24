@@ -13,9 +13,8 @@ class Board extends React.Component {
       squares: Array(25).fill(null),
       xIsNext: true,
       data: null
-   }
+    }
   }
-
 
   componentDidMount() {
     const username = "nico";
