@@ -13,15 +13,14 @@ const checkWinner = (squares) => {
         [2, 6, 10], [3, 7, 11], [7, 11, 15], [4, 8, 12], [8, 12, 16], [12, 16, 20],
         [9, 13, 17], [13, 17, 21], [14, 18, 22]
       ]  
-    winningLines.map(item => {
-      const [a, b, c] = item;
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        console.log(squares[a])
-        return squares[a] 
-      } else {
-        return null
+
+      for (let i = 0; i < winningLines.length; i++) {
+        const [a, b, c] = winningLines[i];
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+          return squares[a];
+        }
       }
-    })
-}
+      return null;
+    }
    
-export default checkWinner
+export default checkWinner;
