@@ -5,10 +5,16 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    squares: Array(25).fill(null)
+      squares: Array(25).fill(null),  
    }
   }
   
+  handleClick = (i) => {
+    const clonedSquares = JSON.parse(JSON.stringify(this.state.squares))
+    clonedSquares[i] = "💩";
+    this.setState({squares: clonedSquares})
+  }
+
   renderSquare(i) {
     return (
       <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)}/>
