@@ -17,7 +17,7 @@ const checkWinner = (cells) => {
       for (let i = 0; i < winningLines.length; i++) {
         const [a, b, c] = winningLines[i];
         if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
-          return "Game Over!";
+          return cells[a];
         }
       }
       return null;

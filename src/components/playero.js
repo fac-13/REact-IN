@@ -32,7 +32,7 @@ class O extends React.Component {
     if (!this.state.data) {
     return (
       <div className="playero">
-      <h2>Player B</h2>
+      <h2>Player Boo</h2>
       <form onSubmit={this.handleSubmit}>
         <label><p> Please enter your name:</p>
         <input type="text" value={this.state.value} onChange={this.handleChange} /></label>

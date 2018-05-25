@@ -32,7 +32,7 @@ class X extends React.Component {
     if (!this.state.data) {
     return (
       <div className="playerx">
-      <h2>Player A</h2>
+      <h2>Player Poo</h2>
       <form onSubmit={this.handleSubmit}>
         <label><p>Please enter your name:</p>
         <input type="text" value={this.state.value} onChange={this.handleChange} />
