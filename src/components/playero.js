@@ -34,8 +34,8 @@ class O extends React.Component {
       <div className="playero">
       <h2>Player B</h2>
       <form onSubmit={this.handleSubmit}>
-        <p><label> Please enter your name:</label></p>
-        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <label><p> Please enter your name:</p>
+        <input type="text" value={this.state.value} onChange={this.handleChange} /></label>
         <input type="submit" value="Enter" />
       </form>
       </div>
