@@ -1,18 +1,29 @@
 body{
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #29334c;
     color:#fafafa;
-    height: 100vh;
     font-family: 'Indie Flower', cursive;
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 h2,
 h4 {
     text-align: center;
+}
+
+.container__players{
+ min-width: 100%;
+}
+
+#playerx, #playero{
+display:flex;
+justify-content: center;
+align-items: center;
 }
 
 .playerx,
@@ -151,4 +162,12 @@ grid-area: y;
 }
 .cell24{
  grid-area: z;
+}
+
+@media only screen and (min-width: 900px){
+ .container__players{
+    display:flex;
+    justify-content: space-between;
+ }
+
 }
