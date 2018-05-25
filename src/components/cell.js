@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Square(props) {
+function Cell(props) {
   return (
-    <button className={`square ${props.className}`}
+    <button className={`cell ${props.className}`}
       onClick={props.onClick}
       style={props.style}>
       {props.value}
@@ -11,4 +11,4 @@ function Square(props) {
     )
 }
 
-export default Square;
+export default Cell;
