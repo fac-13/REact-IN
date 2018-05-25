@@ -1,5 +1,6 @@
 import React from 'react';
 import Cell from './cell';
+import Reset from './reset';
 import checkWinner from '../utils/checkWinner';
 
 class Board extends React.Component {
@@ -26,6 +27,14 @@ class Board extends React.Component {
       colours: clonedColours,
     })
   }
+  handleReset = () => {
+    this.setState({
+      cells: Array(25).fill(null),
+      nextPlayer: true,
+      colours: Array(25).fill('transparent')
+    })
+  }
+
     render() {
       const winner = checkWinner(this.state.cells);
       let status;
@@ -47,7 +56,11 @@ class Board extends React.Component {
               style={{ backgroundColor: this.state.colours[i] }}
             />
           })}
-         
+          <Reset
+            className={"reset"}
+            onClick={() => this.handleReset()}
+          /> 
+        
           </React.Fragment>
       );
     }

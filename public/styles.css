@@ -62,7 +62,8 @@ width: 70%;
     "f g h i j"
     "k l m n o"
     "p q r s u"
-    "v w x y z";
+    "v w x y z"
+    ". . rs . .";
 }
 
 .status-line{
@@ -81,6 +82,26 @@ width: 70%;
     font-size: 2rem;
     font-family: 'Indie Flower', cursive;
     border-radius: 10px;
+}
+
+.reset{
+    background-color: transparent;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    height: 30px;
+    width: 50px;
+    grid-area: rs;
+    color: #fafafa;
+    font-family: 'Indie Flower', cursive;
+
+}
+.reset:active{
+    outline: none;
+    box-shadow: 0 0 5px #fafafa;
+}
+.reset:focus{
+    outline: none;
+    box-shadow: 0 0 5px #fafafa;
 }
 
 .board-row{
