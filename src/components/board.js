@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Square from './square';
-import checkWinner from '../utils/checkWinner'
-
+import checkWinner from '../utils/checkWinner';
 
 class Board extends React.Component {
   constructor(props) {
@@ -10,36 +9,46 @@ class Board extends React.Component {
     this.state = {
       squares: Array(25).fill(null),
       xIsNext: true,
-   }
+      colours: Array(25).fill('transparent')
+    }
   }
-  
+
   handleClick = (i) => {
     const clonedSquares = JSON.parse(JSON.stringify(this.state.squares))
+    const clonedColours = JSON.parse(JSON.stringify(this.state.colours))
     if (checkWinner(clonedSquares) || clonedSquares[i]){
       console.log(checkWinner)
       return;
     }
-    clonedSquares[i] =  this.state.xIsNext ? "X" : "O";
+    clonedSquares[i] = this.state.xIsNext ? "💩" : "👻";
+    clonedColours[i] = this.state.xIsNext ? "#abbc47" : "#4f2a59"
     this.setState({
       squares: clonedSquares,
       xIsNext: !this.state.xIsNext,
+      colours: clonedColours,
     })
   }
 
   renderSquare(i) {
     return (
-      <Square className={`square${i}`} value={this.state.squares[i]} onClick={() => this.handleClick(i)}/>
+      <Square
+        className={`square${i}`}
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+        style = {{backgroundColor: this.state.colours[i]}}
+      />
     ) 
   }
     
     render() {
-      const winner = checkWinner(this.state.squares)
+      const winner = checkWinner(this.state.squares);
       let status;
       if (winner) {
         status = "Winner: " + winner;
       } else {
-        status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        status = "It's your turn to: " + (this.state.xIsNext ? '💩' : '👻');
       }
+
       return (
         <React.Fragment>
         <div className="status-line" >{status}</div>
@@ -72,6 +81,5 @@ class Board extends React.Component {
       );
     }
 }
-
 
 export default Board;
