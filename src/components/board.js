@@ -1,39 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Square from './square';
+import Cell from './cell';
 import checkWinner from '../utils/checkWinner';
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squares: Array(25).fill(null),
-      xIsNext: true,
+      cells: Array(25).fill(null),
+      nextPlayer: true,
       colours: Array(25).fill('transparent')
     }
   }
 
   handleClick = (i) => {
-    const clonedSquares = JSON.parse(JSON.stringify(this.state.squares))
+    const clonedCells = JSON.parse(JSON.stringify(this.state.cells))
     const clonedColours = JSON.parse(JSON.stringify(this.state.colours))
-    if (checkWinner(clonedSquares) || clonedSquares[i]){
-      console.log(checkWinner)
+    if (checkWinner(clonedCells) || clonedCells[i]){
       return;
     }
-    clonedSquares[i] = this.state.xIsNext ? "💩" : "👻";
-    clonedColours[i] = this.state.xIsNext ? "#abbc47" : "#4f2a59"
+    clonedCells[i] = this.state.nextPlayer ? "💩" : "👻";
+    clonedColours[i] = this.state.nextPlayer ? "#abbc47" : "#4f2a59"
     this.setState({
-      squares: clonedSquares,
-      xIsNext: !this.state.xIsNext,
+      cells: clonedCells,
+      nextPlayer: !this.state.nextPlayer,
       colours: clonedColours,
     })
   }
 
-  renderSquare(i) {
+   renderCell(i) {
     return (
-      <Square
-        className={`square${i}`}
-        value={this.state.squares[i]}
+      <Cell
+        className={`cell${i}`}
+        value={this.state.cells[i]}
         onClick={() => this.handleClick(i)}
         style = {{backgroundColor: this.state.colours[i]}}
       />
@@ -41,42 +40,42 @@ class Board extends React.Component {
   }
     
     render() {
-      const winner = checkWinner(this.state.squares);
+      const winner = checkWinner(this.state.cells);
       let status;
       if (winner) {
         status = "Winner: " + winner;
       } else {
-        status = "It's your turn to: " + (this.state.xIsNext ? '💩' : '👻');
+        status = "It's your turn to: " + (this.state.nextPlayer ? '💩' : '👻');
       }
 
       return (
         <React.Fragment>
         <div className="status-line" >{status}</div>
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}
-            {this.renderSquare(9)}
-            {this.renderSquare(10)}
-            {this.renderSquare(11)}
-            {this.renderSquare(12)}
-            {this.renderSquare(13)}
-            {this.renderSquare(14)}
-            {this.renderSquare(15)}
-            {this.renderSquare(16)}
-            {this.renderSquare(17)}
-            {this.renderSquare(18)}
-            {this.renderSquare(19)}
-            {this.renderSquare(20)}
-            {this.renderSquare(21)}
-            {this.renderSquare(22)}
-            {this.renderSquare(23)}
-            {this.renderSquare(24)}
+            {this. renderCell(0)}
+            {this. renderCell(1)}
+            {this. renderCell(2)}
+            {this. renderCell(3)}
+            {this. renderCell(4)}
+            {this. renderCell(5)}
+            {this. renderCell(6)}
+            {this. renderCell(7)}
+            {this. renderCell(8)}
+            {this. renderCell(9)}
+            {this. renderCell(10)}
+            {this. renderCell(11)}
+            {this. renderCell(12)}
+            {this. renderCell(13)}
+            {this. renderCell(14)}
+            {this. renderCell(15)}
+            {this. renderCell(16)}
+            {this. renderCell(17)}
+            {this. renderCell(18)}
+            {this. renderCell(19)}
+            {this. renderCell(20)}
+            {this. renderCell(21)}
+            {this. renderCell(22)}
+            {this. renderCell(23)}
+            {this. renderCell(24)}
           </React.Fragment>
       );
     }

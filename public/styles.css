@@ -7,19 +7,41 @@ body{
     font-family: 'Indie Flower', cursive;
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
+h2,
+h4 {
+    text-align: center;
+}
+
+.playerx,
+.playero,
 .container{
     max-width: 300px;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2em !important;
+}
+
+.emoji{
+    font-size: 2em;
+    padding: 0 0.2em;
+}
+
+.avatar--container {
+    text-align:center;
+}
+
+.avatar--img {
+border-radius: 50%;
+width: 70%;
 }
 
 .game-board{
+    margin:2em;
     max-width: 300px;
     display: grid;
     align-items: center;
@@ -38,7 +60,7 @@ body{
     font-size: 1.5rem;
 }
 
-.square{
+.cell{
     border: 1px solid #5d6882;
     outline: none;
     height: 50px;
@@ -55,78 +77,78 @@ body{
     padding: 0;
 }
 
-.square0{
+.cell0{
  grid-area: a;
 }
-.square1{
+.cell1{
  grid-area: b;
 }
-.square2{
+.cell2{
  grid-area: c;
 }
-.square3{
+.cell3{
  grid-area: d;
 }
-.square4{
+.cell4{
  grid-area: e;
 }
-.square5{
+.cell5{
  grid-area: f;
 }
-.square6{
+.cell6{
  grid-area: g;
 }
-.square7{
+.cell7{
  grid-area: h;
 }
-.square8{
+.cell8{
  grid-area: i;
 }
-.square9{
+.cell9{
  grid-area: j;
 }
-.square10{
+.cell10{
  grid-area: k;
 }
-.square11{
+.cell11{
  grid-area: l;
 }
-.square12{
+.cell12{
 grid-area: m;
 }
-.square13{
+.cell13{
 grid-area: n;
 }
-.square14{
+.cell14{
 grid-area: o;
 }
-.square15{
+.cell15{
 grid-area: p;
 }
-.square16{
+.cell16{
 grid-area: q;
 }
-.square17{
+.cell17{
 grid-area: r;
 }
-.square18{
+.cell18{
 grid-area: s;
 }
-.square19{
+.cell19{
 grid-area: u;
 }
-.square20{
+.cell20{
 grid-area: v;
 }
-.square21{
+.cell21{
 grid-area: w;
 }
-.square22{
+.cell22{
  grid-area: x;
 }
-.square23{
+.cell23{
 grid-area: y;
 }
-.square24{
+.cell24{
  grid-area: z;
 }

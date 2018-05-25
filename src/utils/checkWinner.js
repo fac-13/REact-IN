@@ -1,5 +1,5 @@
 
-const checkWinner = (squares) => {
+const checkWinner = (cells) => {
     const winningLines =
       [ 
         [0, 1, 2],[1, 2, 3],[2, 3, 4],[5, 6, 7], [6, 7, 8],[7, 8, 9],[10, 11, 12],
@@ -16,8 +16,8 @@ const checkWinner = (squares) => {
 
       for (let i = 0; i < winningLines.length; i++) {
         const [a, b, c] = winningLines[i];
-        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-          return squares[a];
+        if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
+          return cells[a];
         }
       }
       return null;

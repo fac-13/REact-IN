@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-dom/test-utils'
 import Board from './board'
-import Square from './square'
+import Cell from './cell'
 import Game from './game'
 import { render, Simulate, prettyDOM } from 'react-testing-library';
 
