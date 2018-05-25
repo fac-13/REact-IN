@@ -26,18 +26,6 @@ class Board extends React.Component {
       colours: clonedColours,
     })
   }
-
-   renderCell(i) {
-    return (
-      <Cell
-        className={`cell${i}`}
-        value={this.state.cells[i]}
-        onClick={() => this.handleClick(i)}
-        style = {{backgroundColor: this.state.colours[i]}}
-      />
-    ) 
-  }
-    
     render() {
       const winner = checkWinner(this.state.cells);
       let status;
@@ -49,32 +37,17 @@ class Board extends React.Component {
 
       return (
         <React.Fragment>
-        <div className="status-line" >{status}</div>
-            {this. renderCell(0)}
-            {this. renderCell(1)}
-            {this. renderCell(2)}
-            {this. renderCell(3)}
-            {this. renderCell(4)}
-            {this. renderCell(5)}
-            {this. renderCell(6)}
-            {this. renderCell(7)}
-            {this. renderCell(8)}
-            {this. renderCell(9)}
-            {this. renderCell(10)}
-            {this. renderCell(11)}
-            {this. renderCell(12)}
-            {this. renderCell(13)}
-            {this. renderCell(14)}
-            {this. renderCell(15)}
-            {this. renderCell(16)}
-            {this. renderCell(17)}
-            {this. renderCell(18)}
-            {this. renderCell(19)}
-            {this. renderCell(20)}
-            {this. renderCell(21)}
-            {this. renderCell(22)}
-            {this. renderCell(23)}
-            {this. renderCell(24)}
+          <div className="status-line" >{status}</div>
+          {this.state.cells.map((_, i) => {
+            return <Cell
+              key = {i}  
+              className={`cell${i}`}
+              value={this.state.cells[i]}
+              onClick={() => this.handleClick(i)}
+              style={{ backgroundColor: this.state.colours[i] }}
+            />
+          })}
+         
           </React.Fragment>
       );
     }
