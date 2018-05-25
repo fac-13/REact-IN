@@ -5,19 +5,27 @@ body{
     font-family: 'Indie Flower', cursive;
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
+.playerx,
+.playero,
 .container{
     max-width: 300px;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2em !important;
+}
+
+.avatar--img {
+border-radius: 50%;
+width: 70%;
 }
 
 .game-board{
+    margin:2em;
     max-width: 250px;
     display: grid;
     grid-template-areas: 
