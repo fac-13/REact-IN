@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { fetchData, API_BASE } from "../utils/fetchAvatar";
 
 

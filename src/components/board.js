@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Cell from './cell';
 import checkWinner from '../utils/checkWinner';
 
