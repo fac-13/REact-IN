@@ -51,7 +51,7 @@ class X extends React.Component {
       <div className="playerx">  
       <div className="avatar">
         <h2>Hello {this.state.value}</h2>
-        <h4>Your task it to ...<span class="emoji">💩</span></h4>
+        <h4>Your task it to ...<span className="emoji">💩</span></h4>
         <figure className="avatar--container">
           <img className="avatar--img" src={url} />
         </figure>  
