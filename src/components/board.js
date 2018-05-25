@@ -38,8 +38,10 @@ class Board extends React.Component {
     render() {
       const gameOver = checkWinner(this.state.cells);
       let status;
-      if (gameOver) {
-        status = gameOver;
+      if (gameOver && this.state.nextPlayer === true) {
+        status = "Game Over. The winner is Poooo....";
+      } else if (gameOver && this.state.nextPlayer === false) {
+        status = "Game Over. The winner is Boooo....";
       } else {
         status = "It's your turn to: " + (this.state.nextPlayer ? '💩' : '👻');
       }
