@@ -21,7 +21,6 @@ class O extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const value = this.state.value;
-    console.log(value);
     const url = `https://cors-anywhere.herokuapp.com/${API_BASE}/${value}.png`;
     fetchData(url)
     .then(data => {
@@ -52,11 +51,11 @@ class O extends React.Component {
       <div className="playero">  
       <div className="avatar">
         <h2>Hello {this.state.value}</h2>
-        <h4>You are Player "O"</h4>
-        <p>...and this is your friendly avatar picture</p>
+        <h4>Your task it to ...<span class="emoji">👻</span></h4>
         <figure className="avatar--container">
           <img className="avatar--img" src={url} />
         </figure>  
+      <p>...and this is your friendly avatar picture</p>  
       </div>
       </div>
     );   
